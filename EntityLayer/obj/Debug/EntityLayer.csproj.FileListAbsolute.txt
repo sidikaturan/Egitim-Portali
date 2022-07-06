@@ -1,0 +1,11 @@
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\EntityLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\EntityLayer\bin\Debug\EntityLayer.dll
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\EntityLayer\bin\Debug\EntityLayer.pdb
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\EntityLayer\bin\Debug\EntityFramework.dll
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\EntityLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\EntityLayer\bin\Debug\EntityFramework.xml
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\EntityLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\EntityLayer\obj\Debug\EntityLayer.csproj.AssemblyReference.cache
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\EntityLayer\obj\Debug\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\EntityLayer\obj\Debug\EntityLayer.dll
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\EntityLayer\obj\Debug\EntityLayer.pdb

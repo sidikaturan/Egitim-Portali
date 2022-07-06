@@ -1,0 +1,116 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Message>
+
+@{
+    ViewBag.Title = "TrashBox";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<body>
+
+    <div id="wrapper">
+
+        <div class="wrapper wrapper-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="ibox ">
+                        <div class="ibox-content mailbox-content">
+                            <div class="file-manager">
+                                <a class="btn btn-block btn-primary compose-mail" href="/Message/NewMessage">Yeni İleti</a>
+                                <div class="space-25"></div>
+
+                                <ul class="folder-list m-b-md" style="padding: 0">
+                                    <li><a href="/Message/Inbox"> <i class="fa fa-inbox "></i> Gelen Kutusu  </a></li>
+                                    <li><a href="/Message/SendBox"> <i class="fa fa-envelope-o"></i> Gönderilenler</a></li>
+                                    <li><a href="/Message/TrashBox"> <i class="fa fa-trash-o"></i> Çöp Kutusu</a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 animated fadeInRight">
+                    <div class="mail-box-header">
+
+                        <form method="get" action="index.html" class="float-right mail-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-sm" name="search" placeholder="Mesaj ara">
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-sm btn-primary">
+                                        Ara
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <h2>
+                            Çöp Kutusu
+                        </h2>
+                       
+                    </div>
+                    <div class="mail-box">
+
+                        <table class="table table-hover table-mail">
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    if (item.MessageRead == true)
+                                    {
+                                        <tr class="unread">
+
+                                            <td class="mail-ontact"><a href="/Message/MessageDetails/@item.MessageID">@(item.Subject.Length > 30 ? item.Subject.Substring(0, item.Subject.Substring(0,30).LastIndexOf(" "))+"..." : item.Subject)</a></td>
+                                            <td class="mail-subject"><a href="/Message/MessageDetails/@item.MessageID">@(item.MessageContent.Length > 30 ? item.MessageContent.Substring(0, item.MessageContent.Substring(0,30).LastIndexOf(" "))+"..." : item.MessageContent)</a></td>
+                                            <td><a href="/Message/CopeTasi/@item.MessageID"><button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Geri al"><i class="fa fa-rotate-left"></i> </button></a></td>
+                                            <td><a href="/Message/DeleteMessage/@item.MessageID"><button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Sil"><i class="fa fa-trash-o"></i> </button></a></td>
+
+                                            <td class="text-right mail-date">@(((DateTime)item.MessageDate).ToString("dd-MMM-yyyy"))</td>
+                                        </tr>
+                                    }
+                                    else
+                                    {
+                                        <tr class="read">
+                                            <td class="mail-ontact"><a href="/Message/MessageDetails/@item.MessageID">@(item.Subject.Length > 30 ? item.Subject.Substring(0, item.Subject.Substring(0,30).LastIndexOf(" "))+"..." : item.Subject)</a></td>
+                                            <td class="mail-subject"><a href="/Message/MessageDetails/@item.MessageID">@(item.MessageContent.Length > 30 ? item.MessageContent.Substring(0, item.MessageContent.Substring(0,30).LastIndexOf(" "))+"..." : item.MessageContent)</a></td>
+                                            <td><a href="/Message/CopeTasi/@item.MessageID"><button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Geri al"><i class="fa fa-rotate-left"></i> </button></a></td>
+                                            <td><a href="/Message/DeleteMessage/@item.MessageID"><button class="btn btn-white btn-sm" data-toggle="tooltip" data-placement="top" title="Sil"><i class="fa fa-trash-o"></i> </button></a></td>
+
+                                            <td class="text-right mail-date">@(((DateTime)item.MessageDate).ToString("dd-MMM-yyyy"))</td>
+                                        </tr>
+                                    }
+
+                                }
+
+
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });</script>
+</body>
+

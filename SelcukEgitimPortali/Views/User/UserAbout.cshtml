@@ -1,0 +1,14 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+@foreach (var item in Model)
+{
+    <div class="sidebar-box">
+        <div class="bio text-center">
+            <img src="@item.User.UserImage" alt="Image Placeholder" class="img-fluid mb-5">
+            <div class="bio-body">
+                <h2>@item.User.UserName</h2>
+                <p class="mb-4">@item.User.UserAbout</p>
+                <p><a href="/Profile/Index/@item.UserID" class="btn btn-primary btn-sm rounded px-4 py-2">Yazar Profili</a></p>
+            </div>
+        </div>
+    </div>
+}

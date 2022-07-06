@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>İstatistikler</h2>
+
+<div class="row">
+    <div class="col-lg-3">
+        <div class="ibox">
+            <div class="ibox-content">
+                <h5>Toplam Gönderi Sayısı</h5>
+                <h1 class="no-margins">
+                    <i class="fa fa-save"></i>
+
+                    @ViewBag.gonderisayisi
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="ibox">
+            <div class="ibox-content">
+                <h5>Toplam Yorum Sayısı</h5>
+                <h1 class="no-margins">
+                    <i class="fa fa-comment"></i>
+
+                    @ViewBag.yorumsayisi
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="ibox">
+            <div class="ibox-content">
+                <h5>Toplam Kullanıcı Sayısı</h5>
+                <h1 class="no-margins">
+                    <i class="fa fa-user"></i>
+
+                    @ViewBag.kullanicisayisi
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="ibox">
+            <div class="ibox-content">
+                <h5>Toplam Abone Sayısı</h5>
+                <h1 class="no-margins">
+                    <i class="fa fa-user-o"></i>
+                    @ViewBag.abonesayisi
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="ibox">
+            <div class="ibox-content">
+                <h5>Toplam Mesaj Sayısı</h5>
+                <h1 class="no-margins">
+                    <i class="fa fa-commenting-o"></i>
+                    @ViewBag.iletisimesajisayisi
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="ibox">
+            <div class="ibox-content">
+                <h5>Toplam Kategori Sayısı</h5>
+                <h1 class="no-margins">
+                    <i class="fa fa-th-large"></i>
+                    @ViewBag.kategorisayisi
+                </h1>
+            </div>
+        </div>
+    </div>
+
+</div>

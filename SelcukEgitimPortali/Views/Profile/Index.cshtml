@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete.User
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="site-section">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-5 col-lg-12 mb-5 text-center">
+                <img src="@Model.UserImage" alt="Image" class="img-fluid w-25 rounded-circle mb-4">
+                <h2 class="mb-3 h5">@Model.UserName</h2>
+                <p>@Model.UserAbout</p>
+                <p class="mt-2">
+                    <a href="/Message/NewMessage/@Model.UserID" class="p-3"><span class="icon-message"></span></a>
+                </p>
+            </div>
+        </div>
+           
+        @Html.Action("MeetTheTeam", "Profile")
+
+    </div>
+</div>

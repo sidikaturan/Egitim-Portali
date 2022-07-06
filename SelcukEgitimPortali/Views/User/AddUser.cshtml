@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.User
+
+@{
+    ViewBag.Title = "AddUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<form class="form-group" method="post">
+
+    <i class="fas fa-user-alt"></i> @Html.Label(" Kullanıcı Adı Soyadı")
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    <i class="fas fa-file-image"></i> @Html.Label(" Resim Yolu")
+    @Html.TextBoxFor(x => x.UserImage, new { @class = "form-control" })
+    <br />
+    <i class="fas fa-sort-numeric-up"></i> @Html.Label(" Sınıfı")
+    @Html.TextBoxFor(x => x.UserAboutShort, new { @class = "form-control" })
+    <br />
+    <i class="fas fa-user"></i> @Html.Label(" Kullanıcı Statüsü")
+    @Html.TextBoxFor(x => x.UserTitle, new { @class = "form-control" })
+    <br />
+    <i class="fas fa-mail-bulk"></i> @Html.Label(" Mail Adresi")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    <i class="fas fa-shield-alt"></i> @Html.Label("Şifre")
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    <i class="fas fa-stream "></i>  @Html.Label("Öğrenci No:")
+    @Html.TextBoxFor(x => x.UserNo, new { @class = "form-control" })
+    <br />
+    <i class="fas fa-file-alt"></i> @Html.Label("Hakkında")
+    @Html.TextAreaFor(x => x.UserAbout, 2, 20, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info"> KAYDET </button>
+
+</form>
+

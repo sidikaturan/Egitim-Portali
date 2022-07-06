@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post">
+    <br />
+
+    <label>Kategori Adı</label>
+    <input type="text" name="CategoryName" class="form-control" />
+    <br />
+
+    <label>Kategori Açıklaması</label>
+    <textarea name="CategoryDescription"  cols="20" rows="5" class="form-control"></textarea>
+    <br />
+    <button class="btn btn-info">Ekle</button>
+</form>

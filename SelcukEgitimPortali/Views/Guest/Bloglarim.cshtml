@@ -1,0 +1,105 @@
+﻿@model  IEnumerable<EntityLayer.Concrete.Blog>
+@using PagedList;
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Bloglarim";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Bloglarim</h2>
+
+
+<style type="text/css">
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<br />
+<div class="ibox-title">
+    <h3>Blog Listesi</h3>
+    &nbsp;
+    &nbsp;
+</div>
+<br />
+<div class="ibox-content">
+    <div class="row m-b-sm m-t-sm">
+        <div class="col-md-1">
+            <a href="/Guest/GonderiOlustur/" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Yeni Blog</a>
+        </div>
+
+        <div class="col-md-11">
+            @using (Html.BeginForm("AdminBlogList", "Blog", FormMethod.Post))
+            {
+                <div class="input-group">
+                    <input type="text" placeholder="Gönderi ara" name="p" class="form-control-sm form-control"> <span class="input-group-btn">
+                        <button type="submit" class="btn btn-sm btn-primary"> ARA</button>
+                    </span>
+                </div>
+            }
+        </div>
+
+    </div>
+    <br />
+    <div class="table-responsive">
+        <table class="table table-hover issue-tracker">
+            <tr>
+                <th>ID</th>
+                <th>Başlık</th>
+                <th>Kategori</th>
+                <th>Tarih</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+                <th>İçerikler</th>
+                <th>Detaylar</th>
+                <th>Yorumlar</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.BlogID</td>
+                    <td>@item.BlogTitle</td>
+                    <td>@item.Category.CategoryName</td>
+                    <td>@item.BlogDate.ToShortDateString()</td>
+                    <td><a href="/Guest/DeleteBlog/@item.BlogID" class="btn btn-danger delete-confirm"> Sil </a> </td>
+                    <td><a href="/Guest/UpdateBlog/@item.BlogID" class="btn btn-success"> Güncelle </a> </td>
+                    <td><a href="/Guest/BlogIcerikleri/@item.BlogID" class="btn btn-outline-primary"> İçerikler </a> </td>
+                    <td><a href="/Blog/BlogDetails/@item.BlogID" class="btn btn-warning"> Detaylar </a> </td>
+                    <td><a href="/Guest/GetCommentByBlog/@item.BlogID" class="btn btn-info"> Yorumlar </a> </td>
+                </tr>
+
+            }
+        </table>
+        <div class="container">
+
+            <div class="center">
+                @Html.PagedListPager((IPagedList)Model, page => Url.Action("Bloglarim", new { page }), new PagedListRenderOptions
+           {
+               LiElementClasses = new List<string>
+        {"dataTables_paginate paging_simple_numbers" }
+           })
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/admin/js/jquery-3.1.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    $('.delete-confirm').on('click', function (event) {
+        event.preventDefault();
+        const url = $(this).attr('href');
+        swal({
+            title: 'Bu gönderiyi silmek istediğinize emin misiniz?',
+            text: 'Bu gönderi kalıcı olarak silinecektir.',
+            icon: 'warning',
+            dangerMode: true,
+            buttons: ["Vazgeç", "Sil!"],
+        }).then(function (value) {
+            if (value) {
+                window.location.href = url;
+            }
+        });
+    });
+</script>

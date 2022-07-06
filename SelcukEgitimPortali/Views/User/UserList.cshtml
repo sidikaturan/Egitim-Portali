@@ -1,0 +1,42 @@
+﻿@model IEnumerable<EntityLayer.Concrete.User>
+@{
+    ViewBag.Title = "UserList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-3">
+            <div class="contact-box center-version">
+
+                <a href="#">
+
+                    <img alt="image" class="rounded-circle" src="@item.UserImage">
+
+
+                    <h3 class="m-b-xs"><strong>@item.UserName</strong></h3>
+
+                    <div class="font-bold">@item.UserTitle</div>
+                    <address class="m-t-md">
+                        <strong>@item.UserNo</strong><br>
+                        @item.UserAbout<br>
+
+
+                    </address>
+
+                </a>
+                <div class="contact-box-footer">
+                    <div class="m-t-xs btn-group">
+                        <a href="#" class="btn btn-xs btn-success"><i class="fa fa-list"></i> Gönderiler </a>
+                        <a href="#" class="btn btn-xs btn-outline-secondary"><i class="fa fa-envelope"></i> Mesaj</a>
+                        <a href="/User/UserEdit/@item.UserID" class="btn btn-xs btn-info"><i class="fa fa-edit"></i> Düzenle</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
+
+<a href="/User/AddUser/" class="btn btn-primary"> Yeni Kullanıcı Girişi</a>

@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.About
+@{
+    ViewBag.Title = "EditAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<div class="ibox-title">
+    <h3 style="color:darkcyan"><b>Hakkımızda Düzenleme Sayfası</b></h3>
+</div>
+<div class="ibox-content">
+    <form method="post">
+        <label>Açıklama</label>
+        @Html.HiddenFor(x=>x.AboutID)
+        <br />
+        <textarea name="AboutContent1" class="form-control" cols="20" rows="5">@Model.AboutContent1</textarea>
+        <br />
+        <label>Görsel</label>
+        <input type="text" class="form-control" name="AboutImage1" value="@Model.AboutImage1" />
+        <br />
+        <button type="submit" class="btn btn-success">Güncelle</button>
+    </form>
+</div>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Comment>
+@{
+    ViewBag.Title = "GetCommentByBlog";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<br />
+
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="ibox">
+            <div class="ibox-title">
+                <span class="float-right">(<strong>@ViewBag.sayi</strong>) Toplam Yorum Sayısı</span>
+                <h5>Yayında olan yorumlar</h5>
+            </div>
+            @foreach (var item in Model)
+            {
+
+
+                <div class="ibox-content">
+
+
+                    <div class="table-responsive">
+                        <table class="table shoping-cart-table">
+
+                            <tbody>
+                                <tr>
+                                    <td width="90">
+                                        <div class="cart-product-imitation" style="background-image: url('@item.Blogs.BlogImage');background-size: 100% 100%;">
+                                        </div>
+                                    </td>
+                                    <td class="desc">
+                                        <h3>
+                                            <a href="/Blog/BlogDetails/@item.BlogID" class="text-navy">
+                                                @item.Blogs.BlogTitle
+                                            </a>
+                                        </h3>
+                                        <p>
+                                            @item.CommentText
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <h4>
+                                            @item.CommentDate.ToShortDateString()
+                                        </h4>
+                                        <dl>
+                                            <dt>@item.UserName</dt>
+                                            <dd>@item.Mail</dd>
+                                        </dl>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            }
+            <div class="ibox-content">
+
+                <button class="btn btn-primary float-right"><i class="fa fa fa-shopping-cart"></i> Checkout</button>
+                <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

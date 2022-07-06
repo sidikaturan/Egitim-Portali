@@ -1,0 +1,14 @@
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\bin\Debug\EntityLayer.dll
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\bin\Debug\EntityLayer.pdb
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\Sıdıka\source\repos\SelcukEgitimPortali\BusinessLayer\obj\Debug\BusinessLayer.pdb

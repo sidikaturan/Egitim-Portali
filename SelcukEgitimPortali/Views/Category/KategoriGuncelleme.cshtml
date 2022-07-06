@@ -1,0 +1,18 @@
+﻿@model  EntityLayer.Concrete.Category
+@{
+    ViewBag.Title = "KategoriGuncelleme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form method="post">
+    @Html.HiddenFor(x=>x.CategoryID)
+    <label>Kategori Adı</label>
+    <input type="text" name="CategoryName" value="@Model.CategoryName" class="form-control" />
+    <br />
+    <label>Kategori Açıklaması</label>
+    <textarea name="CategoryDescription" cols="20" rows="5" class="form-control">@Model.CategoryDescription</textarea>
+    <br />
+
+    <button class="btn btn-info">Güncelle</button>
+</form>

@@ -1,0 +1,46 @@
+﻿@model EntityLayer.Concrete.User
+@{
+    ViewBag.Title = "UserEdit";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<form  method="post" enctype="multipart/form-data">
+
+
+    @Html.HiddenFor(x => x.UserID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kullanıcı Adı Soyadı")
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Kullanıcı Görseli")
+    <br />
+    @if (Model.UserImage != null)
+    {
+        <img src="@Model.UserImage" style="width:100px;height:100px;" />
+        <br />
+        <br />
+    }
+    <input type="file" name="UserImage" class="form-control">
+    <br />
+    @Html.Label(" Sınıfı")
+    @Html.TextBoxFor(x => x.UserAboutShort, new { @class = "form-control" })
+    <br />
+    @Html.Label(" Kullanıcı Statüsü")
+    @Html.TextBoxFor(x => x.UserTitle, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.Mail, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.ZiyaretciPasswordHash, new { @class = "form-control" })
+    @Html.HiddenFor(x => x.ZiyaretciPasswordSalt, new { @class = "form-control" })
+    <br />
+    @Html.Label("Öğrenci No:")
+    @Html.TextBoxFor(x => x.UserNo, new { @class = "form-control" })
+    <br />
+    @Html.Label("Hakkında")
+    @Html.TextAreaFor(x => x.UserAbout, 2, 20, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info"> KAYDET </button>
+    <br />
+    <br />
+</form>
+
+
+

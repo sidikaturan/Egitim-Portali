@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.User
+@{
+    ViewBag.Title = "UserEdit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    @Html.HiddenFor(x => x.UserID, new { @class = "form-control" })
+    <br />
+    @Html.Label(" Kullanıcı Adı Soyadı")
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    @Html.Label(" Resim Yolu")
+    @Html.TextBoxFor(x => x.UserImage, new { @class = "form-control" })
+    <br />
+    @Html.Label(" Sınıfı")
+    @Html.TextBoxFor(x => x.UserAboutShort, new { @class = "form-control" })
+    <br />
+    @Html.Label(" Kullanıcı Statüsü")
+    @Html.TextBoxFor(x => x.UserTitle, new { @class = "form-control" })
+    <br />
+    @Html.Label(" Mail Adresi")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    @Html.Label("Öğrenci No:")
+    @Html.TextBoxFor(x => x.UserNo, new { @class = "form-control" })
+    <br />
+    @Html.Label("Hakkında")
+    @Html.TextAreaFor(x => x.UserAbout, 2, 20, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info"> KAYDET </button>
+
+</form>
+

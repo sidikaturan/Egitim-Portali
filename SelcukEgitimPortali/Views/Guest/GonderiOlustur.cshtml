@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Blog
+
+@{
+    ViewBag.Title = "GonderiOlustur";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+
+    @Html.Label("Blog Başlığı")
+    <input type="text" class="form-control" name="BlogTitle" />
+    <br />
+    @Html.Label("Kategori")
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.values, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Kapak Fotoğrafı")
+    <input type="text" class="form-control" name="BlogImage" />
+
+   
+    <br />
+    <button class="btn btn-info"> KAYDET </button>
+
+</form>
+

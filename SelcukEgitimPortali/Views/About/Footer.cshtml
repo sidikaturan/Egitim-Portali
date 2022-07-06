@@ -1,0 +1,54 @@
+﻿@model IEnumerable<EntityLayer.Concrete.About>
+
+<div class="site-footer">
+    <div class="container">
+        <div class="row mb-5">
+            @foreach (var x in Model)
+            {
+                <div class="col-md-4">
+                    <h3 class="footer-heading mb-4">Hakkımızda</h3>
+                    <p>@x.AboutContent1</p>
+                </div>
+            }
+            <div class="col-md-3 ml-auto">
+                <!-- <h3 class="footer-heading mb-4">Navigation</h3> -->
+                <ul class="list-unstyled float-left mr-5">
+                    <li><a href="/About/Index/">Hakkımızda</a></li>
+                    <li><a href="/Contact/SendMessage/">İletişim</a></li>
+                    <li><a href="/Blog/Index/">Ana Sayfa</a></li>
+                    <li><a href="/Login/Login/">Kullanıcı Girişi</a></li>
+                </ul>
+                <ul class="list-unstyled float-left">
+                    <li><a href="/Blog/BlogByCategory/1/">Notlar</a></li>
+                    <li><a href="/Blog/BlogByCategory/2/">Hazır Kodlar</a></li>
+                    <li><a href="/Blog/BlogByCategory/3/">Kaynaklar</a></li>
+                    <li><a href="/Blog/BlogByCategory/4/">Teknoloji</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+
+
+                <div>
+                    <h3 class="footer-heading mb-4">Sosyal Medya Hesaplarımız</h3>
+                    <p>
+                        <a href="https://twitter.com/selcukuniresmi?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><span class="icon-twitter p-2"></span></a>
+                        <a href="https://www.instagram.com/selcukuniresmi/"><span class="icon-instagram p-2"></span></a>
+                        <a href="https://www.selcuk.edu.tr"><span class="icon-home p-2"></span></a>
+                        <a href="https://ogrposta.selcuk.edu.tr"><span class="icon-envelope p-2"></span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    
+                    <script>document.write(new Date().getFullYear());</script> Tüm Hakları Saklıdır.
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+

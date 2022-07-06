@@ -1,0 +1,124 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="shortcut icon" type="image/png" href="/logoblack (1)_16x16.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selçuk Eğitim Portalı Yönetici Paneli</title>
+    <link href="~/admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/admin/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/admin/css/animate.css" rel="stylesheet">
+    <link href="~/admin/css/style.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Loginn/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Loginn/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Loginn/favicon-16x16.png">
+    <style type="text/css">
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <div class="container">
+                                <img alt="image" class="rounded" src="~/portallogo.png" style="width:120px;" />
+                            </div>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <div class="container">
+                                    <span class="block m-t-xs font-bold" style="text-align:center;">Selçuk Eğitim Portalı Kulanıcı Paneli</span>
+                                </div>
+                            </a>
+
+                        </div>
+                        <div class="logo-element">
+                            Selçuk Eğitim Portalı
+                        </div>
+                    </li>
+                    <li>
+                        <a href="/Guest/GonderiOlustur"><i class="fa fa-edit"></i> <span class="nav-label">Yeni Gönderi Oluştur</span></a>
+                    </li>
+                    <li>
+                        <a href="/Guest/Bloglarim"><i class="fa fa-list"></i> <span class="nav-label">Gönderilerim</span></a>
+                    </li>
+                    <li>
+                        <a href="/Guest/UserEdit"><i class="fa fa-user"></i> <span class="nav-label">Profil</span></a>
+                    </li>
+                    <li>
+                        <a href="/Message/Inbox"><i class="fa fa-comment"></i> <span class="nav-label">Mesajlar</span></a>
+                    </li>
+                    <li>
+                        <a href="/Blog/Index"><i class="fa fa-home"></i> <span class="nav-label">Ana Sayfa</span></a>
+                    </li>
+                    <li>
+                        <a href="/Login/LogOut/"><i class="fa fa-sign-out"></i> <span class="nav-label">Çıkış Yap</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+
+                        <li class="dropdown">
+
+                            <ul class="dropdown-menu dropdown-messages">
+
+                                <li class="dropdown-divider"></li>
+
+                                <li class="dropdown-divider"></li>
+
+                            </ul>
+                        </li>
+
+
+
+
+                    </ul>
+
+                </nav>
+            </div>
+            @RenderBody()
+        </div>
+
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="~/admin/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script src="~/admin/js/popper.min.js"></script>
+    <script src="~/admin/js/bootstrap.js"></script>
+    <script src="~/admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/admin/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Sparkline -->
+    <script src="~/admin/js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Peity -->
+    <script src="~/admin/js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="~/admin/js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="~/admin/js/inspinia.js"></script>
+    <script src="~/admin/js/plugins/pace/pace.min.js"></script>
+
+
+</body>
+</html>

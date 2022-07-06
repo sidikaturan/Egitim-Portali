@@ -1,0 +1,72 @@
+﻿@model EntityLayer.Concrete.Class1
+
+<head>
+    <link href="~/admin/css/plugins/codemirror/codemirror.css" rel="stylesheet">
+    <link href="~/admin/css/plugins/codemirror/ambiance.css" rel="stylesheet">
+</head>
+
+@foreach (var item in Model.blog)
+{
+    <div class="post-content-body">
+
+        @foreach (var x in Model.deger2)
+        {
+            if (x.TipID == 1)
+            {
+                <div class="row mb-5 mt-5">
+                    <div class="col-md-12 mb-4" style="color:black">
+                        @x.IcerikAciklamasi
+                    </div>
+                </div>
+            }
+            if (x.TipID == 2)
+            {
+                <div class="row mb-5 mt-5">
+                    <div class="col-md-12 mb-4">
+                        <img src="@x.IcerikAciklamasi" class="img-fluid rounded">
+                    </div>
+                </div>
+            }
+            if (x.TipID == 3)
+            {
+                <div class="row mb-5 mt-5">
+                    <div class="col-md-12 mb-4">
+                        <textarea class="code">
+@x.IcerikAciklamasi
+                        </textarea>
+                    </div>
+                </div>
+            }
+
+        }
+    </div>
+}
+<!-- Mainly scripts -->
+<script src="~/admin/js/jquery-3.1.1.min.js"></script>
+<script src="~/admin/js/popper.min.js"></script>
+<script src="~/admin/js/bootstrap.js"></script>
+<script src="~/admin/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="~/admin/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- CodeMirror -->
+<script src="~/admin/js/plugins/codemirror/codemirror.js"></script>
+<script src="~/admin/js/plugins/codemirror/mode/javascript/javascript.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="~/admin/js/inspinia.js"></script>
+<script src="~/admin/js/plugins/pace/pace.min.js"></script>
+
+
+<script type="text/javascript">
+    function qsa(sel) {
+        return Array.apply(null, document.querySelectorAll(sel));
+    }
+    qsa(".code").forEach(function (editorEl) {
+        CodeMirror.fromTextArea(editorEl, {
+            lineNumbers: true,
+            styleActiveLine: true,
+            matchBrackets: true,
+        });
+    });
+</script>
+

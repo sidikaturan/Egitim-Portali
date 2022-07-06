@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Category>
+@{
+    ViewBag.Title = "Kategoriler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategoriler</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kategori Adı</th>
+        <th>Kategori Açıklaması</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.CategoryID</td>
+            <td>@x.CategoryName</td>
+            <td>@x.CategoryDescription</td>
+            <td><a href="/Category/KategoriGuncelleme/@x.CategoryID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Category/KategoriSil/@x.CategoryID" class="btn btn-danger delete-confirm">Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/Category/KategoriEkle" class="btn btn-primary">Yeni Kategori Ekle</a>
+<script src="~/admin/js/jquery-3.1.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    $('.delete-confirm').on('click', function (event) {
+        event.preventDefault();
+        const url = $(this).attr('href');
+        swal({
+            title: 'Bu kategoriyi silmek istediğinize emin misiniz?',
+            text: 'Bu kategoriye ait olan bütün gönderiler ve bütün yorumlar kalıcı olarak silinecektir.',
+            icon: 'warning',
+            dangerMode: true,
+            buttons: ["Vazgeç", "Sil!"],
+        }).then(function (value) {
+            if (value) {
+                window.location.href = url;
+            }
+        });
+    });
+</script>
